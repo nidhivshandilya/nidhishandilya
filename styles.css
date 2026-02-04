@@ -308,8 +308,18 @@ a {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    .hero-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-title {
+        text-align: center;
     }
     
     .mobile-menu-toggle {
@@ -352,13 +362,24 @@ a {
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 /* Profile Images */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
 .hero-image {
-    width: 200px;
-    height: 200px;
+    flex-shrink: 0;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hero-title {
+    flex: 1;
+    text-align: left;
 }
 
 .hero-image img {
