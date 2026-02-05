@@ -107,9 +107,12 @@
             letter-spacing: 0.02em;
         }
         
+        /* YouTube Video Container */
         .video-container {
             width: 100%;
             margin-bottom: 50px;
+            position: relative;
+            cursor: pointer;
         }
         
         .video-thumb {
@@ -117,12 +120,69 @@
             aspect-ratio: 16/9;
             background: #fff;
             border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        
+        .video-container:hover .video-thumb {
+            border-color: #ccc;
+        }
+        
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ccc;
-            font-size: 13px;
-            font-weight: 300;
+            transition: background 0.3s ease;
+        }
+        
+        .video-container:hover .play-button {
+            background: rgba(255, 0, 0, 0.9);
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 3px;
+        }
+        
+        .video-player {
+            display: none;
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+        
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .video-container.playing .video-thumb {
+            display: none;
+        }
+        
+        .video-container.playing .video-player {
+            display: block;
         }
         
         .info-blocks {
@@ -227,9 +287,18 @@
             <article class="project">
                 <h2 class="project-title">AI Coloring Page Generator</h2>
                 
-                <div class="video-container">
+                <div class="video-container" onclick="this.classList.toggle('playing')">
                     <div class="video-thumb">
-                        —
+                        <img src="https://img.youtube.com/vi/2bShKrudlf4/maxresdefault.jpg" alt="AI Coloring Page Generator Demo">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-player">
+                        <iframe 
+                            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1?autoplay=1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
                 
@@ -252,9 +321,18 @@
             <article class="project">
                 <h2 class="project-title">Playlist Psychologist</h2>
                 
-                <div class="video-container">
+                <div class="video-container" onclick="this.classList.toggle('playing')">
                     <div class="video-thumb">
-                        —
+                        <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID_2/maxresdefault.jpg" alt="Playlist Psychologist Demo">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-player">
+                        <iframe 
+                            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2?autoplay=1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
                 
