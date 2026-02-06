@@ -427,3 +427,18 @@ a {
         margin: 0 auto;
     }
 }
+.footnote {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+.footnote a {
+    color: #888;
+    text-decoration: underline;
+}
+
+.footnote a:hover {
+    color: #aaa;
+}
