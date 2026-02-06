@@ -41,8 +41,105 @@
             <h1 class="hero-title">I'm a product maker who loves imagining and bringing concepts to life. The biggest and root concept is the concept of "I".</h1>
         </div>
         <footer class="page-footer">
-            <p class="footnote">All content and opinions on this site are my personal explorations and not representative of my employer. For professional discussions, reach me out on <a href="https://www.linkedin.com/in/nidhi-v-shandilya-b05170b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+            <p class="footnote">All content on this site is entirely mine and not representative of my employer. For professional discussions, reach me out on <a href="https://www.linkedin.com/in/nidhi-v-shandilya-b05170b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
         </footer>
     </main>
+    
+    <script>
+        // Firefly glow effect
+        class FireflyGlow {
+            constructor() {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.glows = [];
+                
+                this.canvas.style.position = 'fixed';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.pointerEvents = 'none';
+                this.canvas.style.zIndex = '9999';
+                document.body.appendChild(this.canvas);
+                
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+                document.addEventListener('mousemove', (e) => this.onMouseMove(e));
+                
+                this.animate();
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            
+            onMouseMove(e) {
+                // Create a gentle glow that follows the cursor
+                this.glows.push({
+                    x: e.clientX,
+                    y: e.clientY,
+                    life: 1.0,
+                    maxLife: 1.0,
+                    size: 40 + Math.random() * 20,
+                    fadeSpeed: 0.008 + Math.random() * 0.004,
+                    // Gentle pulsing
+                    pulseOffset: Math.random() * Math.PI * 2,
+                    pulseSpeed: 0.03 + Math.random() * 0.02
+                });
+                
+                // Limit number of glows for performance
+                if (this.glows.length > 150) {
+                    this.glows.shift();
+                }
+            }
+            
+            animate() {
+                // Clear canvas
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                const time = Date.now() * 0.001;
+                
+                // Draw glows
+                for (let i = this.glows.length - 1; i >= 0; i--) {
+                    const glow = this.glows[i];
+                    
+                    // Fade out
+                    glow.life -= glow.fadeSpeed;
+                    
+                    if (glow.life <= 0) {
+                        this.glows.splice(i, 1);
+                        continue;
+                    }
+                    
+                    // Gentle pulsing effect
+                    const pulse = Math.sin(time * glow.pulseSpeed + glow.pulseOffset) * 0.3 + 0.7;
+                    
+                    // Calculate opacity with fade and pulse
+                    const baseOpacity = 0.15;
+                    const opacity = baseOpacity * glow.life * pulse;
+                    
+                    // Draw soft gradient glow
+                    const gradient = this.ctx.createRadialGradient(
+                        glow.x, glow.y, 0,
+                        glow.x, glow.y, glow.size
+                    );
+                    
+                    // Warm, gentle firefly color (soft yellow-green)
+                    gradient.addColorStop(0, `rgba(255, 248, 220, ${opacity * 0.8})`);
+                    gradient.addColorStop(0.3, `rgba(255, 248, 200, ${opacity * 0.5})`);
+                    gradient.addColorStop(0.6, `rgba(230, 255, 200, ${opacity * 0.2})`);
+                    gradient.addColorStop(1, `rgba(200, 255, 180, 0)`);
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.beginPath();
+                    this.ctx.arc(glow.x, glow.y, glow.size, 0, Math.PI * 2);
+                    this.ctx.fill();
+                }
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        new FireflyGlow();
+    </script>
 </body>
 </html>
