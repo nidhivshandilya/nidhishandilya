@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nidhi Shandilya....under construction</title>
+    <title>Nidhi Shandilya</title>
     <style>
         * {
             margin: 0;
@@ -82,6 +82,7 @@
         
         .intro {
             max-width: 600px;
+            margin-bottom: 100px;
         }
         
         .intro h1 {
@@ -91,6 +92,47 @@
             line-height: 1.8;
             letter-spacing: 0.02em;
             margin: 0;
+        }
+
+        /* About section */
+        .about-section {
+            max-width: 600px;
+            text-align: left;
+            padding-top: 60px;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .about-section h2 {
+            font-size: 18px;
+            font-weight: 300;
+            color: #000;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-section p:last-of-type {
+            margin-bottom: 30px;
+        }
+
+        .links-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .links-row a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .links-row a:hover {
+            color: #0052a3;
         }
         
         @media (max-width: 768px) {
@@ -121,6 +163,15 @@
             .intro h1 {
                 font-size: 18px;
             }
+
+            .about-section {
+                text-align: left;
+                padding-top: 40px;
+            }
+
+            .about-section h2 {
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -131,7 +182,6 @@
             <ul class="nav-links">
                 <li><a href="thoughts.html">Thoughts</a></li>
                 <li><a href="projects.html">Side projects</a></li>
-                <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
@@ -141,6 +191,20 @@
         
         <div class="intro">
             <h1>I'm a product maker who loves imagining and bringing new concepts to life. The biggest and root concept is the concept of "I".</h1>
+        </div>
+
+        <div class="about-section">
+            <h2>About</h2>
+            <p>
+                Hello! I'm Nidhi Shandilya, a product maker who loves imagining and bringing new concepts to life.
+            </p>
+            
+            <p>
+                All content on this site is entirely mine and not representative of my employer. For professional discussions, reach me out here:
+            </p>
+            <div class="links-row">
+                <a href="https://www.linkedin.com/in/nidhi-v-shandilya-b05170b/">LinkedIn</a>
+            </div>  
         </div>
     </div>
 </body>
