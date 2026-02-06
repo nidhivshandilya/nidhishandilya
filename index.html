@@ -3,29 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        .disclaimer {
-            color: lightgray;
-        }
-    </style>
+    <title>Nidhi Shandilya</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Nidhi Shandilya</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="menu-text">Menu</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="thoughts.html">Thoughts</a></li>
+                <li><a href="projects.html">Side projects</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <header>
-        <h1>Welcome to My Portfolio!</h1>
-        <p>Here you will find information about my projects and skills.</p>
-    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close" aria-label="Close menu">
+            <span class="close-text">Close Menu</span>
+        </button>
+        <ul class="mobile-nav-links">
+            <li><a href="thoughts.html">Thoughts</a></li>
+            <li><a href="projects.html">Side projects</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Check out my LinkedIn profile: <a href="https://www.linkedin.com/in/nidhivshandilya" target="_blank">LinkedIn</a></p>
-        <p>I am a passionate developer with expertise in various programming languages and technologies.</p>
-    </section>
-
-    <footer>
-        <p class="disclaimer">Disclaimer: The information presented here is for informational purposes only.</p>
-    </footer>
-
-</body>
-</html>
+  <!-- Hero Section -->
+<main class="hero-section">
+    <div class="hero-content">
+        <div class="hero-image">
+            <img src="screenshot.jpeg.png" alt="Nidhi Shandilya">
+        </div>
+        <h1 class="hero-title">I'm a product maker who loves imagining and bringing concepts to life. The biggest and root concept is the concept of "I".</h1>
+    </div>
+</main>
