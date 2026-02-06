@@ -165,9 +165,17 @@ a {
     padding: 8rem 2rem 4rem;
 }
 
-.hero-content {
+.hero-wrapper {
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
 }
 
 .hero-title {
@@ -177,6 +185,42 @@ a {
     line-height: 1.5;
     letter-spacing: -0.01em;
     animation: fadeInUp 0.8s ease-out;
+    flex: 1;
+    text-align: left;
+}
+
+.hero-image {
+    flex-shrink: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footnote {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footnote a {
+    color: #888;
+    text-decoration: underline;
+}
+
+.footnote a:hover {
+    color: #aaa;
 }
 
 /* Content Sections */
@@ -294,6 +338,27 @@ a {
     color: var(--hover-color);
 }
 
+.about-layout {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.about-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -314,8 +379,8 @@ a {
     }
     
     .hero-image {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
     
     .hero-title {
@@ -342,6 +407,18 @@ a {
     .nav-container {
         padding: 0 1.5rem;
     }
+    
+    .about-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about-image {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -361,84 +438,3 @@ a {
 
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-/* Profile Images */
-.hero-content {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-
-.hero-image {
-    flex-shrink: 0;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.hero-title {
-    flex: 1;
-    text-align: left;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-layout {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-}
-
-.about-image {
-    flex-shrink: 0;
-    width: 250px;
-    height: 250px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .hero-image {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .about-layout {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .about-image {
-        width: 100%;
-        max-width: 300px;
-        height: 300px;
-        margin: 0 auto;
-    }
-}
-.footnote {
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: #888;
-    line-height: 1.6;
-}
-
-.footnote a {
-    color: #888;
-    text-decoration: underline;
-}
-
-.footnote a:hover {
-    color: #aaa;
-}
