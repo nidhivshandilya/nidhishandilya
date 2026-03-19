@@ -1,3 +1,6 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* CSS Variables */
 :root {
     --primary-bg: #ffffff;
@@ -18,7 +21,7 @@
 
 body {
     font-family: 'Crimson Text', Georgia, serif;
-    background-color: var(--primary-bg);
+    /* background-color removed so the dot grid canvas shows through */
     color: var(--primary-text);
     line-height: 1.6;
     font-size: 18px;
@@ -46,7 +49,7 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--primary-bg);
+    background-color: transparent;
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     padding: 1.5rem 0;
@@ -383,42 +386,46 @@ a {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .hero-image {
         width: 150px;
         height: 150px;
     }
-    
+
     .hero-title {
         text-align: center;
     }
-    
+
     .mobile-menu-toggle {
         display: block;
     }
-    
+
+    .nav-links {
+        display: none;
+    }
+
     .hero-section {
         padding: 6rem 1.5rem 2rem;
     }
-    
+
     .content-section {
         padding: 6rem 1.5rem 3rem;
     }
-    
+
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    
+
     .nav-container {
         padding: 0 1.5rem;
     }
-    
+
     .about-layout {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .about-image {
         width: 100%;
         max-width: 300px;
@@ -431,16 +438,13 @@ a {
     body {
         font-size: 16px;
     }
-    
+
     .nav-container {
         padding: 0 1rem;
     }
-    
+
     .hero-section,
     .content-section {
         padding: 5rem 1rem 2rem;
     }
 }
-
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
