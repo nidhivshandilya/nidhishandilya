@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nidhi Shandilya... always under construction</title>
+    <title>Nidhi Shandilya... under construction</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo">Nidhi Shandilya...always under construction</a>
+            <a href="index.html" class="logo">Nidhi Shandilya...under construction</a>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span class="menu-text">Menu</span>
             </button>
@@ -44,7 +44,7 @@
     </main>
 
     <!-- Dot grid background -->
-    <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;"></canvas>
+    <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#131312;"></canvas>
     <script>
         (function() {
             const canvas = document.getElementById('dot-bg');
@@ -79,7 +79,8 @@
             const fadeDuration = 900;
 
             function draw(now) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#131312';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
                 for (const d of dots) {
                     const elapsed = now - start - d.delay;
                     if (elapsed < 0) continue;
