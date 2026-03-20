@@ -3,12 +3,12 @@
 
 /* CSS Variables */
 :root {
-    --primary-bg: #ffffff;
-    --primary-text: #1a1a1a;
-    --secondary-text: #4a4a4a;
-    --accent-color: #2a2a2a;
-    --border-color: #e0e0e0;
-    --hover-color: #6a6a6a;
+    --primary-bg: #131312;
+    --primary-text: #e8e8e4;
+    --secondary-text: #a0a09a;
+    --accent-color: #cccccc;
+    --border-color: rgba(255,255,255,0.12);
+    --hover-color: #ffffff;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -21,7 +21,7 @@
 
 body {
     font-family: 'Crimson Text', Georgia, serif;
-    /* background-color removed so the dot grid canvas shows through */
+    /* no background-color — canvas handles it */
     color: var(--primary-text);
     line-height: 1.6;
     font-size: 18px;
@@ -69,6 +69,7 @@ a {
     font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: 0.02em;
+    color: var(--primary-text);
 }
 
 .logo:hover {
@@ -85,6 +86,7 @@ a {
     font-size: 0.95rem;
     letter-spacing: 0.03em;
     position: relative;
+    color: var(--secondary-text);
 }
 
 .nav-links a::after {
@@ -96,6 +98,10 @@ a {
     height: 1px;
     background-color: var(--primary-text);
     transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-text);
 }
 
 .nav-links a:hover::after {
@@ -121,7 +127,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--primary-bg);
+    background-color: #131312;
     z-index: 2000;
     padding: 2rem;
     flex-direction: column;
@@ -153,6 +159,7 @@ a {
 .mobile-nav-links a {
     font-family: 'Libre Baskerville', Georgia, serif;
     font-size: 1.5rem;
+    color: var(--primary-text);
 }
 
 .mobile-nav-links a:hover {
@@ -186,6 +193,7 @@ a {
     animation: fadeInUp 0.8s ease-out;
     flex: 1;
     text-align: left;
+    color: var(--primary-text);
 }
 
 .hero-image {
@@ -194,7 +202,7 @@ a {
     height: 280px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero-image img {
@@ -209,27 +217,27 @@ a {
     margin: 0 auto;
     width: 100%;
     padding-top: 3rem;
-    border-top: 1px solid rgba(224, 224, 224, 0.3);
+    border-top: 1px solid var(--border-color);
 }
 
 .footnote {
     font-size: 0.85rem;
-    color: #777;
+    color: var(--secondary-text);
     line-height: 1.6;
     text-align: center;
     padding-bottom: 1.5rem;
 }
 
 .footnote a {
-    color: #555;
+    color: var(--secondary-text);
     text-decoration: none;
-    border-bottom: 1px solid rgba(85, 85, 85, 0.4);
+    border-bottom: 1px solid rgba(160,160,154,0.4);
     transition: var(--transition);
 }
 
 .footnote a:hover {
-    color: #2a2a2a;
-    border-bottom-color: #2a2a2a;
+    color: var(--primary-text);
+    border-bottom-color: var(--primary-text);
 }
 
 /* Content Sections */
@@ -244,6 +252,7 @@ a {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 3rem;
     font-weight: 400;
+    color: var(--primary-text);
 }
 
 /* Thoughts Grid */
@@ -273,6 +282,7 @@ a {
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
     font-weight: 400;
+    color: var(--primary-text);
 }
 
 .thought-excerpt {
@@ -299,7 +309,7 @@ a {
 .project-image {
     width: 100%;
     aspect-ratio: 4/3;
-    background-color: #f5f5f5;
+    background-color: #2a2a2a;
     margin-bottom: 1rem;
     overflow: hidden;
 }
@@ -319,6 +329,7 @@ a {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: 400;
+    color: var(--primary-text);
 }
 
 .project-description {
@@ -330,6 +341,7 @@ a {
 /* About Section */
 .about-content {
     line-height: 1.8;
+    color: var(--primary-text);
 }
 
 .about-content p {
@@ -359,7 +371,7 @@ a {
     height: 250px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .about-image img {
