@@ -13,7 +13,6 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #fafafa;
             color: #333;
             line-height: 1.8;
             font-size: 15px;
@@ -92,9 +91,7 @@
         }
         
         @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
+            to { opacity: 1; }
         }
         
         .project-title {
@@ -230,36 +227,13 @@
         }
         
         @media (max-width: 768px) {
-            .nav-header {
-                padding: 40px 20px;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                gap: 30px;
-                align-items: flex-start;
-            }
-            
-            .nav-links {
-                gap: 30px;
-            }
-            
-            .container {
-                padding: 60px 20px 80px;
-            }
-            
-            .page-header {
-                margin-bottom: 80px;
-            }
-            
-            .project-list {
-                gap: 80px;
-            }
-            
-            .links-row {
-                flex-direction: column;
-                gap: 15px;
-            }
+            .nav-header { padding: 40px 20px; }
+            .nav-container { flex-direction: column; gap: 30px; align-items: flex-start; }
+            .nav-links { gap: 30px; }
+            .container { padding: 60px 20px 80px; }
+            .page-header { margin-bottom: 80px; }
+            .project-list { gap: 80px; }
+            .links-row { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -355,7 +329,7 @@ Obviously, I had to refine my prompt as we iterated - for example change from Ge
     </div>
 
     <!-- Dot grid background -->
-    <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;"></canvas>
+    <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#131312;"></canvas>
     <script>
         (function() {
             const canvas = document.getElementById('dot-bg');
@@ -390,7 +364,8 @@ Obviously, I had to refine my prompt as we iterated - for example change from Ge
             const fadeDuration = 900;
 
             function draw(now) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#131312';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
                 for (const d of dots) {
                     const elapsed = now - start - d.delay;
                     if (elapsed < 0) continue;
