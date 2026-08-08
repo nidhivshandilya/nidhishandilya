@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="index.html" class="logo">Nidhi Shandilya</a>
@@ -15,99 +14,43 @@
                 <span class="menu-text">Menu</span>
             </button>
             <ul class="nav-links">
-                <li><a href="thoughts.html">Thoughts</a></li>
-                <li><a href="projects.html">Side projects</a></li>
+                <li><a href="thoughts.html" class="current">Thoughts</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu">
         <button class="mobile-menu-close" aria-label="Close menu">
             <span class="close-text">Close Menu</span>
         </button>
         <ul class="mobile-nav-links">
             <li><a href="thoughts.html">Thoughts</a></li>
-            <li><a href="projects.html">Side projects</a></li>
+            <li><a href="experiments.html">Experiments</a></li>
         </ul>
     </div>
 
-    <!-- Content -->
     <main class="content-section">
         <h1 class="section-title">Thoughts</h1>
-        
+        <p class="section-intro">Half-formed things I am working out in writing.</p>
+
         <div class="thoughts-grid">
             <article class="thought-item">
                 <div class="thought-date">January 2026</div>
-                <h2 class="thought-title">. first thought . . .</h2>
-                <p class="thought-excerpt">
-                    ....
-                </p>
+                <h2 class="thought-title forming">forming&hellip;</h2>
+                <p class="thought-excerpt">Not finished thinking about this one yet.</p>
             </article>
 
             <article class="thought-item">
                 <div class="thought-date">December 2025</div>
-                <h2 class="thought-title">. thought . .</h2>
-                <p class="thought-excerpt">
-                   ..
-                </p>
+                <h2 class="thought-title forming">forming&hellip;</h2>
+                <p class="thought-excerpt">Not finished thinking about this one yet.</p>
             </article>
+            <div class="ledger-end"></div>
         </div>
     </main>
 
-    <!-- Dot grid background -->
     <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#131312;"></canvas>
-    <script>
-        (function() {
-            const canvas = document.getElementById('dot-bg');
-            const ctx = canvas.getContext('2d');
-            const spacing = 24;
-            let dots = [];
-
-            function buildDots() {
-                dots = [];
-                const cols = Math.ceil(canvas.width / spacing) + 1;
-                const rows = Math.ceil(canvas.height / spacing) + 1;
-                for (let r = 0; r < rows; r++) {
-                    for (let c = 0; c < cols; c++) {
-                        dots.push({
-                            x: c * spacing + spacing / 2,
-                            y: r * spacing + spacing / 2,
-                            delay: Math.random() * 3500
-                        });
-                    }
-                }
-            }
-
-            function resize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                buildDots();
-            }
-            resize();
-            window.addEventListener('resize', resize);
-
-            const start = performance.now();
-            const fadeDuration = 900;
-
-            function draw(now) {
-                ctx.fillStyle = '#131312';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                for (const d of dots) {
-                    const elapsed = now - start - d.delay;
-                    if (elapsed < 0) continue;
-                    const alpha = Math.min(1, elapsed / fadeDuration) * 0.45;
-                    ctx.beginPath();
-                    ctx.arc(d.x, d.y, 1.4, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
-                    ctx.fill();
-                }
-                requestAnimationFrame(draw);
-            }
-            requestAnimationFrame(draw);
-        })();
-    </script>
-
     <script src="script.js"></script>
 </body>
 </html>
