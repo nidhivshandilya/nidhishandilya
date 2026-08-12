@@ -55,8 +55,10 @@ html[data-theme="light"] {
     --underline-soft: rgba(85,85,78,0.35);
     --portrait-shadow: 0 8px 24px rgba(0,0,0,0.14);
     --hover-color: #000000;
-    --dot-rgb: 28,28,26;
-    --dot-alpha: 0.2;
+    /* dark dots read much heavier on paper than white dots do on ink:
+       keep them well below the text so they never compete with it */
+    --dot-rgb: 96,96,88;
+    --dot-alpha: 0.085;
     color-scheme: light;
 }
 
