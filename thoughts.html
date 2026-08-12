@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thoughts - Nidhi Shandilya</title>
+    <script>(function(){try{var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||d);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,10 +14,16 @@
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span class="menu-text">Menu</span>
             </button>
-            <ul class="nav-links">
-                <li><a href="thoughts.html" class="current">Thoughts</a></li>
-                <li><a href="experiments.html">Experiments</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="thoughts.html" class="current">Thoughts</a></li>
+                    <li><a href="experiments.html">Experiments</a></li>
+                </ul>
+                <button class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+                    <span class="theme-mark" aria-hidden="true"></span>
+                    <span class="theme-toggle-label">Light</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -28,6 +35,12 @@
             <li><a href="thoughts.html">Thoughts</a></li>
             <li><a href="experiments.html">Experiments</a></li>
         </ul>
+        <div class="mobile-menu-footer">
+            <button class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+                <span class="theme-mark" aria-hidden="true"></span>
+                <span class="theme-toggle-label">Light</span>
+            </button>
+        </div>
     </div>
 
     <main class="content-section">
@@ -44,7 +57,7 @@
         </div>
     </main>
 
-    <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:#131312;"></canvas>
+    <canvas id="dot-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;background:var(--primary-bg);"></canvas>
     <script src="script.js"></script>
 </body>
 </html>
