@@ -285,18 +285,44 @@ html[data-theme="light"] .theme-mark { transform: rotate(180deg); }
     flex: 1;
 }
 
+.hero-text { flex: 1; }
+
 .hero-title {
     font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.35rem, 3.2vw, 2rem);
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: -0.01em;
     animation: fadeInUp 0.8s ease-out;
-    flex: 1;
     text-align: left;
     color: var(--primary-text);
     text-wrap: pretty;
+    margin-bottom: 1.6rem;
 }
+
+/* The lines under the opening statement: a clear step down from it,
+   so the hero still reads as one thought rather than four. */
+.hero-lede {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--secondary-text);
+    max-width: 52ch;
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.hero-lede:nth-of-type(1) { animation-delay: 0.12s; }
+.hero-lede:nth-of-type(2) { animation-delay: 0.22s; }
+.hero-lede:nth-of-type(3) { animation-delay: 0.32s; margin-bottom: 0; }
+
+.hero-lede a {
+    color: var(--primary-text);
+    border-bottom: 1px solid var(--underline-soft);
+    padding-bottom: 1px;
+}
+
+.hero-lede a:hover { color: var(--hover-color); border-bottom-color: var(--hover-color); }
 
 .hero-image {
     flex-shrink: 0;
@@ -529,7 +555,10 @@ html[data-theme="light"] .theme-mark { transform: rotate(180deg); }
 @media (max-width: 768px) {
     .hero-content { flex-direction: column; gap: 2rem; }
     .hero-image { width: 150px; height: 150px; }
-    .hero-title { text-align: center; }
+    /* left-aligned on mobile: the title now sits above body copy,
+       and centring only the title reads as an accident */
+    .hero-title { text-align: left; }
+    .hero-lede { max-width: none; }
     .mobile-menu-toggle { display: flex; }
     .nav-links { display: none; }
     .nav-right .theme-toggle { display: none; }
