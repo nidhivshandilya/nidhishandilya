@@ -27,6 +27,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// The nav frosts over once the page scrolls under it.
+(function () {
+    const nav = document.querySelector('.main-nav');
+    if (!nav) return;
+    let queued = false;
+
+    function update() {
+        queued = false;
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+    }
+
+    update();
+    window.addEventListener('scroll', function () {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(update);
+    }, { passive: true });
+})();
+
 // Theme: dark by default, light remembered per visitor.
 (function () {
     const root = document.documentElement;
