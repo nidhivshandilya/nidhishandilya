@@ -613,12 +613,74 @@ html[data-theme="light"] .theme-mark { transform: rotate(180deg); }
     text-wrap: pretty;
 }
 
+/* The second line under a title. Same serif, so it reads as part of the title
+   rather than as the first line of the post. */
+.post-title:has(+ .post-subtitle) { margin-bottom: 0.6rem; }
+
+.post-subtitle {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--secondary-text);
+    margin-bottom: 2.6rem;
+    text-wrap: pretty;
+}
+
 .post-body p {
     font-size: 19px;
     line-height: 1.85;
     color: var(--body-strong);
     margin-bottom: 1.6rem;
     text-wrap: pretty;
+}
+
+/* Section breaks in a longer post: a clear step down from the title, with room
+   above so a new section is felt before it is read. */
+.post-body h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--primary-text);
+    margin-top: 3.2rem;
+    margin-bottom: 1.4rem;
+    text-wrap: pretty;
+}
+
+/* Links inside a post, matching the hero treatment. The base rule is
+   color:inherit with no underline, so a link would otherwise vanish. */
+.post-body a {
+    color: var(--primary-text);
+    border-bottom: 1px solid var(--underline-soft);
+    padding-bottom: 1px;
+}
+
+.post-body a:hover { color: var(--hover-color); border-bottom-color: var(--hover-color); }
+
+.post-list { list-style: none; margin: 0 0 1.6rem; padding: 0; }
+
+.post-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 19px;
+    line-height: 1.85;
+    color: var(--body-strong);
+    margin-bottom: 1.1rem;
+    text-wrap: pretty;
+}
+
+/* The same dent the cursor makes in the paper, at list scale. */
+.post-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.15rem;
+    top: 0.78em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--faint-text);
 }
 
 .post-note {
@@ -675,7 +737,7 @@ html[data-theme="light"] .theme-mark { transform: rotate(180deg); }
 .handle-note { font-size: 17px; line-height: 1.7; color: var(--secondary-text); margin: 0; }
 
 @media (max-width: 480px) {
-    .post-body p { font-size: 17px; }
+    .post-body p, .post-list li { font-size: 17px; }
     .handle { grid-template-columns: 1fr; gap: 0.5rem; }
     .handles { gap: 2.2rem; }
 }

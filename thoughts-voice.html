@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching a machine to write like me - Nidhi Shandilya</title>
     <script>(function(){try{var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||d);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
-    <meta name="description" content="Every draft it gives me is competent and none of it is mine. Notes on building a skill that learns how a person writes by watching them work.">
+    <meta name="description" content="Delete every banned word and every em dash. Read what is left. It is still slop, which tells you the words were never the problem.">
     <link rel="canonical" href="https://nidhivshandilya.github.io/nidhishandilya/thoughts-voice.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Nidhi Shandilya">
     <meta property="og:title" content="Teaching a machine to write like me">
-    <meta property="og:description" content="Every draft it gives me is competent and none of it is mine. Notes on building a skill that learns how a person writes by watching them work.">
+    <meta property="og:description" content="Delete every banned word and every em dash. Read what is left. It is still slop, which tells you the words were never the problem.">
     <meta property="og:url" content="https://nidhivshandilya.github.io/nidhishandilya/thoughts-voice.html">
     <meta property="og:image" content="https://nidhivshandilya.github.io/nidhishandilya/og.png">
     <meta property="og:image:width" content="1200">
@@ -65,22 +65,81 @@
         <article class="post">
             <p class="post-date">August 2026</p>
             <h1 class="post-title">Teaching a machine to write like me</h1>
+            <p class="post-subtitle">The soul remains</p>
 
             <div class="post-body">
-                <p>Every draft it hands me is competent and none of it is mine. The sentences are the right length, the structure is tidy, the transitions all show up on time. It reads like a person who has never been annoyed by anything.</p>
+                <p>I have written shit AI and I have consumed shit AI. Being on the receiving and the giving end gives me a good perspective. By now it is a universal experience. So I hope this strikes a chord.</p>
 
-                <p>The tell is not vocabulary. It is rhythm, and it is refusals. I do not use em dashes. I start sentences with And when the sentence has earned it. I stop a paragraph one beat before the point is fully made, because I would rather leave a reader an inch of room than close every loop myself. None of that is a style guide. It is closer to a set of things I will not do, and a model trained on everything cannot easily learn a refusal.</p>
+                <p>Everyone has a theory about what went wrong. Mostly it is a list of words. Delve. Deeply. Testament. It's not X, it's Y. Em dashes, apparently, are a tell now. There are whole sites cataloguing the vocabulary and browser extensions that will hunt it down for you.</p>
 
-                <p>So I am building a skill that learns how a person writes by watching an ordinary working session instead of asking them to describe themselves. Asking does not work. When someone asks me to describe my writing I do not tell the truth, I describe the writer I would like to be: crisper, funnier, better read. The description is aspiration wearing a lab coat.</p>
+                <p>So delete all of it. Every banned word, every em dash. Read what is left.</p>
 
-                <p>What you actually want is the edits. Not the finished piece, the moment where a sentence got cut, or a word got swapped for a plainer one, or a whole paragraph came out because it was showing off. Finished writing is the average of a hundred decisions. The decisions are where the voice lives, and they are almost never written down.</p>
+                <p>It is still slop.</p>
 
-                <p>Where it is now: it picks up rhythm fairly quickly, sentence length, where I break, how I open. Opinions take much longer, and I am not sure yet whether that is a limitation or the correct outcome. There is a version of this that is genuinely useful, where I stop rewriting the same four paragraphs every time. There is a version that is a machine for producing more of me, which is the last thing the internet needs.</p>
+                <p>Which tells you the words were never the problem. The problem is that the writing does not belong to anyone. It is competent. It is clear. It is nobody's.</p>
 
-                <p>It is still forming. That is the honest status of most things I build, and I have stopped treating it as a problem.</p>
+                <p>That is the straitjacket. Not bad writing. Uniform writing.</p>
+
+                <h2>What people actually want</h2>
+
+                <p>Imagine hearing Jackie Chan speak. He is an eloquent speaker. His dialogue delivery is funny. He makes sense. He speaks clearly. Yet - he is distinctly Jackie Chan. The accent, the choice of words, all his.</p>
+
+                <p>The grammar, coherence, structuring etc can be fixed easily by AI, or in olden times by a ghostwriter. But the soul remains.</p>
+
+                <p>Read the Dalai Lama's writings. Or Thich Nhat Hanh. So pristine. So pure. So uniquely them. When you read the words, you hear them speaking those words in your mind.</p>
+
+                <p>But the accent is exactly the thing an editor removes. Thich Nhat Hanh repeated himself constantly and every grammar tool alive would have flagged it as redundancy. There is no rule that separates the grammar from the soul. The soul is usually living inside the mistake.</p>
+
+                <p>Which is why the answer cannot be a rule.</p>
+
+                <p>Look at a mediator. Don't they help connect two conflicting perspectives? How do they do that? They do it by showing what is behind a person's position, in the most understandable and unhostile light. And note - when they mediate for someone who is furious, they convey the ferociousness. They don't downplay it. They convey where the ferocity is coming from and why (often pain) and that is what helps connect to the other party (pain, just different). Unhostile is about the framing. What gets carried across can be white hot.</p>
+
+                <p>This is the job. Accentuate their thoughts and feelings while preserving their essence.</p>
+
+                <p>And people are yearning for it again. The word everyone has landed on is authenticity, which is a weak word for it. What people want is to hear someone in there.</p>
+
+                <h2>What I built</h2>
+
+                <p>Not a formula. A formula produces canned writing, and eventually everyone's canned writing is the same canned writing.</p>
+
+                <p>Think about how you actually come to know a person. If you start living with someone you are better able to predict how they would react in a wide variety of situations. You learned that by close observation. Nobody handed you a framework.</p>
+
+                <p>So what if this is embedded in the process of working with AI itself.</p>
+
+                <p>You write with AI. You go back and forth for an hour. It observes what you dislike, what you correct, what frustrates you. That is a continuous feedback loop. The session itself becomes the corpus.</p>
+
+                <p>The skill I have put <a href="https://github.com/nidhivshandilya/write-like-me" target="_blank" rel="noopener noreferrer">on GitHub</a> does this. It keeps a running profile of how you write while you are working with AI on researching the material and content for the piece. It logs its own mistakes so it stops repeating them. And it carries all of that into the next session.</p>
+
+                <p>This post was written that way. I spent a couple of hours arguing about AI slop and never once talked about how I write until it showed me its file on me.</p>
+
+                <p>I read the first draft and thought, that is about sixty percent me. Some of it was not my voice at all. I marked up what was wrong, and the next rendition was a very good starting point. From there it was final edits to make it feel like my voice.</p>
+
+                <h2>Getting the most out of it</h2>
+
+                <p>The way you use it matters more than the tool.</p>
+
+                <ul class="post-list">
+                    <li>The code is open source, so you can read exactly what it does. The profile it builds about you is a private thing. It stays with you, and I never see it.</li>
+                    <li>Spend time writing your articles, papers, etc. The more time the skill spends observing you, the more it learns and mimics your style. Voice does not show up in one prompt.</li>
+                    <li>Debate it. Arguing teaches it what you will not do, and that is the part that matters.</li>
+                    <li>Use a model that is not sycophantic. A model that agrees with you produces no information about you.</li>
+                    <li>Never press regenerate. That is a rejection with the reason stripped out. Say "no, too smooth" instead. Even a bad reason is worth more than silence.</li>
+                    <li>Rewrite the line yourself instead of picking from three options. Choosing teaches it your taste. Writing teaches it your voice.</li>
+                    <li>Don't tidy your prompts. The typos and the lowercase are data.</li>
+                    <li>Let it see you in more than one register. Otherwise it will learn something true about your blog voice and write it down as a fact about you.</li>
+                    <li>Work on things you care about. You stop managing how you sound when you are deeply engrossed in an honest discussion.</li>
+                </ul>
+
+                <p>Most of this only works if you care about what you are writing. It will not be good ROI for a blog post you wanted to automate away. Which is the whole point of good writing - spending the time to think through what you want to get across.</p>
+
+                <h2>Try it</h2>
+
+                <p>The skill is <a href="https://github.com/nidhivshandilya/write-like-me" target="_blank" rel="noopener noreferrer">on my GitHub</a>. There is nothing to clone and no terminal involved. Turn on code execution in your Claude settings, download one file, upload it under Customize &gt; Skills, and start arguing. You need a paid Claude plan, and the README walks through each step.</p>
+
+                <p>Contributions welcome, and I want to hear what it got wrong about you - that is the most useful thing you can send me.</p>
+
+                <p>The output should be the Dalai Lama writing and it coming out Dalai Lama style, and not Benedict Cumberbatch style.</p>
             </div>
-
-            <p class="post-note">This is a first draft, published while I am still working it out.</p>
         </article>
 
         <p class="post-back"><a href="thoughts.html">Back to Thoughts</a></p>
